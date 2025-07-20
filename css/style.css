@@ -1,0 +1,158 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Ventana estilo aplicación */
+.window {
+  width: 90%;
+  max-width: 900px;
+  height: 80%;
+  background-color: #2d2d30;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Barra de título */
+.title-bar {
+  height: 40px;
+  background-color: #3c3c3c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  user-select: none;
+}
+
+/* Título */
+.title {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Botones ventana */
+.window-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.minimize {
+  background-color: #f4c20d;
+}
+
+.restore {
+  background-color: #4caf50;
+}
+
+.close {
+  background-color: #f44336;
+}
+
+/* Contenido (por ahora vacío) */
+.window-content {
+  flex: 1;
+  background-color: #1e1e1e;
+  padding: 20px;
+  color: #fff;
+  overflow-y: auto;
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.window {
+  /* Ya existente */
+  animation: fadeInZoom 0.6s ease-out;
+}
+
+@keyframes slideFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titulo {
+  font-size: 24px;
+ /* margin-bottom: 10px;*/
+  animation: slideFadeUp 0.6s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.barra {
+  width: 0;
+  height: 2px;
+  background-color: #4caf50;
+  border: none;
+  animation: drawLine 1s ease-out 1s forwards;
+  align-self: stretch;
+  max-width: 200px;
+}
+
+@keyframes drawLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.boton-enlace {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.boton-enlace:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.indice {
+  /*font-size: 24px;*/
+ /* margin-bottom: 10px;*/
+  animation: slideFadeUp 0.6s ease-out 0.4s forwards;
+  opacity: 0;
+}
